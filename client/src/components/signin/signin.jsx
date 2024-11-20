@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 import {
-  signInWithEmailAndPasswordAuth,
+  // signInWithEmailAndPasswordAuth,
   signInWithGoogle,
 } from "../../utlis/firebase.utlis";
 import Button from "../button/button";
@@ -26,7 +26,7 @@ const SignIn = () => {
     e.preventDefault();
 
     try {
-      const { user } = await signInWithEmailAndPasswordAuth(email, password);
+      // const { user } = await signInWithEmailAndPasswordAuth(email, password);
 
       resetFormFields();
     } catch (error) {}

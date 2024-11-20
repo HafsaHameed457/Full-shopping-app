@@ -1,11 +1,10 @@
-import React from "react";
-import "./signup.styles.scss";
-import { useState, useContext } from "react";
-import Button from "../button/button";
+import React, { useState } from "react";
 import {
   createAuthUserwithEmailAndPassword,
   createUserDocFromAuth,
 } from "../../utlis/firebase.utlis";
+import Button from "../button/button";
+import "./signup.styles.scss";
 
 import FormInput from "../form-input/form-input";
 

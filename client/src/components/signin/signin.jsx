@@ -19,13 +19,12 @@ const SignIn = () => {
   const [values, setValues] = useState(defaultValues);
   const { email, password } = values;
 
-  console.log(values);
   const resetFormFields = () => {
     setValues(defaultValues);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submit");
+
     try {
       const { user } = await signInWithEmailAndPasswordAuth(email, password);
 
@@ -36,7 +35,6 @@ const SignIn = () => {
   const handlleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-    console.log(name, value);
   };
 
   const signIn = async () => {

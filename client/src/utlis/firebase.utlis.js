@@ -1,36 +1,35 @@
-import { initializeApp } from "firebase/app";
 import {
+  createUserWithEmailAndPassword,
   getAuth,
   GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signInWithRedirect,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
 } from "firebase/auth";
 
 import {
-  getFirestore,
+  collection,
   doc,
   getDoc,
-  setDoc,
-  collection,
-  writeBatch,
   getDocs,
+  getFirestore,
   query,
+  setDoc,
+  writeBatch,
 } from "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyA7-p8EkSZfHGsh7g_GLoSXc9HliIthvDM",
-  authDomain: "clothingcenter-1177f.firebaseapp.com",
-  projectId: "clothingcenter-1177f",
-  storageBucket: "clothingcenter-1177f.appspot.com",
-  messagingSenderId: "635487085130",
-  appId: "1:635487085130:web:098e0bb68ca2bad25cfcb3",
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyA7-p8EkSZfHGsh7g_GLoSXc9HliIthvDM",
+//   authDomain: "clothingcenter-1177f.firebaseapp.com",
+//   projectId: "clothingcenter-1177f",
+//   storageBucket: "clothingcenter-1177f.appspot.com",
+//   messagingSenderId: "635487085130",
+//   appId: "1:635487085130:web:098e0bb68ca2bad25cfcb3",
+// };
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
   prompt: "select_account",

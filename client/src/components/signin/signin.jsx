@@ -1,13 +1,12 @@
 import React from "react";
 
-import { useState, useContext } from "react";
+import { useState } from "react";
 
-import Button from "../button/button";
 import {
-  signInWithGoogle,
-  createUserDocFromAuth,
   signInWithEmailAndPasswordAuth,
+  signInWithGoogle,
 } from "../../utlis/firebase.utlis";
+import Button from "../button/button";
 
 import FormInput from "../form-input/form-input";
 import "./signin.styles.scss";

@@ -1,13 +1,12 @@
 import React from "react";
 
-import { useState, useContext } from "react";
+import { useState } from "react";
 
-import Button from "../button/button";
 import {
+  // signInWithEmailAndPasswordAuth,
   signInWithGoogle,
-  createUserDocFromAuth,
-  signInWithEmailAndPasswordAuth,
 } from "../../utlis/firebase.utlis";
+import Button from "../button/button";
 
 import FormInput from "../form-input/form-input";
 import "./signin.styles.scss";
@@ -20,15 +19,14 @@ const SignIn = () => {
   const [values, setValues] = useState(defaultValues);
   const { email, password } = values;
 
-  console.log(values);
   const resetFormFields = () => {
     setValues(defaultValues);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submit");
+
     try {
-      const { user } = await signInWithEmailAndPasswordAuth(email, password);
+      // const { user } = await signInWithEmailAndPasswordAuth(email, password);
 
       resetFormFields();
     } catch (error) {}
@@ -37,7 +35,6 @@ const SignIn = () => {
   const handlleChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-    console.log(name, value);
   };
 
   const signIn = async () => {

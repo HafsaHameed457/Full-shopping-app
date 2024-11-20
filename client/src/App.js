@@ -11,6 +11,7 @@ const ProtectedRoute = ({ isAuthenticated, children }) => {
   return isAuthenticated ? children : <Navigate to="/auth" replace />;
 };
 const App = () => {
+  let isLoggedIn = false;
   return (
     <Routes>
       <Route exact path="/" element={<Nav />}>
